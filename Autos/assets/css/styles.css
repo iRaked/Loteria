@@ -1,0 +1,231 @@
+html, body {
+  margin: 0;
+  color: white;
+  background-image: url('../imgs/BG%20Games.png');
+}
+
+.cabecera-carta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+    :root {
+      --base-color: #01010040;
+      --hover-color: #3688ff;
+      --glow-color: #3688ff;
+      --text-color: #fff;
+      --border-radius: 10px;
+      --transition-speed: 0.3s;
+    }
+
+    .tittle {
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 20px;
+      color: var(--glow-color);
+      text-shadow: 0 0 10px rgba(54, 136, 255, 0.6);
+    }
+
+    .cabecera-carta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .nombre-texto {
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    #btnCopiarNombre {
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      border-radius: var(--border-radius);
+      border: 2px solid var(--glow-color);
+      background-color: var(--base-color);
+      color: var(--text-color);
+      position: relative;
+      overflow: hidden;
+      transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    }
+
+    #btnCopiarNombre::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--glow-color) 0%, transparent 60%);
+      opacity: 0.2;
+      transform: rotate(45deg);
+      transition: opacity var(--transition-speed);
+      pointer-events: none;
+    }
+
+    #btnCopiarNombre:hover {
+      background-color: var(--hover-color);
+      box-shadow: 0 0 8px var(--glow-color), 0 0 16px var(--glow-color);
+    }
+
+    #btnCopiarNombre:hover::before {
+      opacity: 0.4;
+    }
+/* 🌟 Glow azul por defecto */
+.glow-title.rosa {
+  --glow-color: #3688ff; /* azul inicial */
+  background-color: var(--base-color);
+  border: 2px solid var(--glow-color);
+  box-shadow: 0 0 12px var(--glow-color), 0 0 24px var(--glow-color);
+  color: var(--glow-color);
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+  font-size: 2rem;
+  text-shadow: 0 0 6px var(--glow-color);
+  transition: all 0.4s ease;
+  animation: fadeInGlow 0.8s ease-out;
+}
+
+/* 🌸 Hover: cambia a rosa */
+.glow-title.rosa:hover {
+  --glow-color: #ff00cc;
+  border-color: var(--glow-color);
+  box-shadow: 0 0 12px var(--glow-color), 0 0 24px var(--glow-color);
+  color: var(--glow-color);
+  text-shadow: 0 0 6px var(--glow-color);
+}
+@keyframes fadeInGlow {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.glow-title.rosa {
+  animation: fadeInGlow 0.9s ease-out;
+}
+
+/* FIN BOTONES */
+.carta {
+  width: 380px;
+  max-width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(54, 136, 255, 0.4);
+}
+
+.contenedor-juego {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.botones-juego {
+  padding: 0 40px;
+}
+
+.botones-juego .btn {
+  min-width: 120px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: var(--border-radius); /* o 8px si prefieres */
+  border: 2px solid var(--glow-color);
+  background-color: var(--base-color);
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.botones-juego .btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 60%);
+  opacity: 0.2;
+  transform: rotate(45deg);
+  transition: opacity var(--transition-speed);
+  pointer-events: none;
+}
+
+.botones-juego .btn:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 0 8px var(--glow-color), 0 0 16px var(--glow-color);
+}
+
+.botones-juego .btn:hover::before {
+  opacity: 0.4;
+}
+
+.zona-historial {
+  max-width: 400px;
+}
+
+.cartas-recientes img {
+  width: 60px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(54, 136, 255, 0.3);
+}
+
+/* LAST SECTION */
+
+.zona-historial {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.historial-img {
+  width: 80px;
+  transition: filter 0.3s ease;
+}
+
+.gris {
+  filter: grayscale(100%);
+}
+
+.cartas-recientes {
+  margin-top: 10px;
+}
+
+.cartas-recientes img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.cartas-recientes img:hover {
+  transform: scale(1.05);
+}
+
+.nombre-carta {
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.nombre-texto {
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🎨 Estilo para nombre de carta copiado */
+#nombreCarta.copiado {
+  font-weight: bold;
+}
